@@ -41,7 +41,7 @@ def list_issues(endpoint, token):
     data = []
     next_page = True
     logging.info("Executing list issues/pull requests with milestone query")
-    url = f'{endpoint}/issues?milestone=*&per_page=100'
+    url = f'{endpoint}/issues?milestone=*&state=all&per_page=100'
     while next_page:
         response = run_get(url, token)
         result = response.json()
